@@ -1,12 +1,13 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 import Cards from "./components/card";
+import Header from "./components/header";
 
 const LandingPage: React.FC = () => {
   return (
     <>
       <Container>
-        <Header>Lojas Fictícia</Header>
+        <Header />
         <Title>Aquecimento</Title>
         <Banner>BLACK FRIDAY</Banner>
         <P>Nossas Promoções de aquecimento estão fervendo, venha conferir.</P>
@@ -85,12 +86,7 @@ const Showcase = styled.div`
   justify-content: space-between;
   margin-top: 6rem;
 `;
-const Header = styled.header`
-  width: 100%;
-  background: linear-gradient(#383637, #646263);
-  color: #fff;
-  font-size: 2rem;
-`;
+
 const Footer = styled.footer`
   background: linear-gradient(#646263, #383637);
   width: 100%;
