@@ -15,7 +15,21 @@ const LandingPage: React.FC = () => {
         <Showcase>
           <Cards />
         </Showcase>
-        <P>Nossas Promoções de aquecimento estão fervendo, venha conferir.</P>
+        <NewsForm
+          onSubmit={(e: any) => {
+            e.preventDefault();
+            const email = e.target.elements.email.value;
+            localStorage.setItem("email", email);
+          }}
+        >
+          <p>Cadastre seu email e receba mais promoções exclusivas.</p>
+          <EmailInput
+            type="email"
+            name="email"
+            placeholder="Digite seu email"
+          />
+          <Button>Ok</Button>
+        </NewsForm>
         <Footer />
       </Container>
     </>
@@ -23,7 +37,11 @@ const LandingPage: React.FC = () => {
 };
 
 export default LandingPage;
-
+const NewsForm = styled.form`
+  padding: 2rem;
+  font-size: 2rem;
+  text-align: center;
+`;
 const Container = styled.div`
   background-color: #383637;
   display: flex;
@@ -31,11 +49,10 @@ const Container = styled.div`
   flex-direction: column;
 `;
 const P = styled.p`
-  color: #fff;
-  margin-top: 150px;
-  margin-bottom: 100px;
+  margin: 2rem 0;
+  margin-top: 15vh;
   font-size: 2rem;
-  width: 40%;
+  width: 60%;
   text-align: center;
 `;
 const glow = keyframes`
@@ -55,22 +72,37 @@ const glow = keyframes`
 `;
 const Title = styled.div`
   color: #fff;
-  font-size: 8vh;
+  font-size: 3rem;
+  padding-top: 2rem;
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 `;
 const Banner = styled.h1`
-  height: 30vh;
+  height: 15vw;
   color: #f75b30;
-  font-size: 15vh;
+  font-size: 10vw;
   transform: rotate(-15deg);
   line-height: 2.2em;
+  font-family: "Flame";
   animation: ${glow} 5s linear infinite;
+  margin: 1rem;
 `;
 const Showcase = styled.div`
   width: 75%;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-top: 6rem;
+  gap: 1rem;
+`;
+const EmailInput = styled.input`
+  padding: 0.5rem;
+  margin: 1rem 0;
+`;
+const Button = styled.button`
+  background-color: #f75b30;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  height: 35px;
 `;

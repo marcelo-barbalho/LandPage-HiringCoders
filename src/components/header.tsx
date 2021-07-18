@@ -25,9 +25,7 @@ const Header: React.FC = () => {
         <Title>Lojas Fictícia</Title>
         <MenuNav>
           {menu.map((item) => (
-            <ItemNav onClick={() => console.log("estou funcionando")}>
-              {item.title}
-            </ItemNav>
+            <ItemNav href="/">{item.title}</ItemNav>
           ))}
         </MenuNav>
       </Container>
@@ -48,16 +46,25 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   width: 80%;
+  margin: 15px;
 `;
 const Title = styled.header`
   color: #fff;
   font-size: 2rem;
 `;
-const MenuNav = styled.div`
+const MenuNav = styled.nav`
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
-const ItemNav = styled.div`
+const ItemNav = styled.a`
   margin: 0 20px 0 20px;
-  font-size: 1.6rem;
+  color: #fff;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 `;

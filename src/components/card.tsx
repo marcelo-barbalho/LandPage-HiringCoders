@@ -16,22 +16,22 @@ const products: Array<Product> = [
   },
   {
     img: liquidificador,
-    description: "liquidificador, iducih qwhu qhidhq uiwhd qhw",
+    description: "liquidificador, iducih qwhu qhidhq uiwhd",
     price: 21,
   },
   {
     img: geladeira,
-    description: "Geladeira hsui qhwu idh quiwhduiqw hdqhwu idh",
+    description: "Geladeira hsui qhwu idh quiwhduiqw",
     price: 21,
   },
   {
     img: fritadeira,
-    description: "liquidificador iyasgyugq yhdw duvgqw yhudqw hdqw",
+    description: "liquidificador iyasgyugq yhdw ",
     price: 21,
   },
   {
     img: microOndas,
-    description: "micro ondar oiunh qw ohadhas dausdh ahidhuias",
+    description: "micro ondar oiunh qw ohadhas dausdh",
     price: 21,
   },
 ];
@@ -41,8 +41,8 @@ const Cards: React.FC = () => {
     <>
       {products.map((produto) => (
         <Card>
-          <Description>{produto.description}</Description>
           <Img src={produto.img}></Img>
+          <Description>{produto.description}</Description>
           <Price>R${produto.price}</Price>
         </Card>
       ))}
@@ -53,30 +53,36 @@ const Cards: React.FC = () => {
 export default Cards;
 
 const Card = styled.div`
-  max-width: 15%;
+  min-width: 170px;
+  width: 18%;
   background-color: transparent;
-  border: 1px solid white;
   border-radius: 3px;
   display: flex;
+  color: #fff;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: #1f1f1f;
+  height: 400px;
+  @media (max-width: 470px) {
+    width: 100%;
+    height: auto;
+  }
 `;
 
 const Img = styled.img`
-  background-color: black;
   width: 100%;
 `;
-const Price = styled.div`
-  background-color: orange;
+
+const Description = styled.span`
   min-width: 50%;
-  margin: 40px;
   display: flex;
   justify-content: center;
   text-align: center;
   font-weight: 600;
-  font-size: 1.3rem; ;
+  font-size: 1.3rem;
+  padding: 1rem;
 `;
-const Description = styled(Price)`
-  border-radius: 5px;
+const Price = styled(Description)`
+  background-color: #f75b30;
 `;

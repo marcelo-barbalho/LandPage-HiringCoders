@@ -9,17 +9,18 @@ const Footer: React.FC = () => {
       <FooterBar>
         <Contacts>
           <FooterTitle>Fale Conosco</FooterTitle>
-          Telefones: (11)2255-2255, (11)2255-2255, (11)2255-2255
-          Email:lojasficticia@ficticia.com.br sac@ficticia.com.br Twiter:
-          @Ficticia Instagram:@Ficticia{" "}
+          <span> Telefones: (11)2255-2255, (11)2255-2255, (11)2255-2255</span>
+          <span>Email:lojasficticia@ficticia.com.br sac@ficticia.com.br</span>
+          <span>Twiter: @Ficticia Instagram:@Ficticia</span>
         </Contacts>
         <Adresses>
           <FooterTitle>Nossas Lojas</FooterTitle>
-          Rua Loren Loren nº36 loja A Rua Loren Loren nº36 loja A Rua Loren
-          Loren nº36 loja A Rua Loren Loren nº36 loja A Rua Loren Loren nº36
-          loja A
+          <address>Rua Loren Loren nº36 loja A , Ipsum</address>
+          <address>Rua Loren Loren nº36 loja A, Ipsum </address>
+          <address>Rua Loren Loren nº36 loja A, Ipsum</address>
         </Adresses>
       </FooterBar>
+      © Copyright 2021
     </>
   );
 };
@@ -29,8 +30,7 @@ export default Footer;
 const FooterBar = styled.footer`
   background: linear-gradient(#646263, #383637);
   width: 100%;
-  color: #fff;
-  font-size: 2rem;
+  font-size: 1rem;
   display: flex;
   justify-content: space-around;
 `;
@@ -43,11 +43,12 @@ const Contacts = styled.div`
   justify-content: flex-start;
   align-items: right;
   margin: 15px;
+  gap: 0.5rem;
 `;
 
 const Adresses = styled(Contacts)``;
 const FooterTitle = styled.p`
-  color: red;
+  color: #f75b30;
   margin: 5px 0 20px 0;
-  border-bottom: 2px solid #fff;
+  border-bottom: 1px solid #fff;
 `;
